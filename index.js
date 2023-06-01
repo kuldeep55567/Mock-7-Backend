@@ -6,6 +6,9 @@ const { orderRouter} = require("./controller/orderRoute");
 const { restaurantRouter} = require("./controller/restaurantRoute");
 require("dotenv").config()
 app.use(express.json())
+app.get("/",(req,res)=>{
+    res.send({"mssg":"Welcome to Food Delivery App"})
+})
 app.use('/api',userRouter)
 app.use('/api',orderRouter)
 app.use('/api',restaurantRouter)
